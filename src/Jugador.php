@@ -15,12 +15,12 @@ class Jugador {
 
             // Validar dorsal único
             if (self::dorsalExiste($dorsal)) {
-                throw new Exception("El dorsal ya está asignado a otro jugador.");
+                throw new PDOException("El dorsal ya está asignado a otro jugador.");
             }
 
             // Validar código de barras único
             if (self::barcodeExiste($barcode)) {
-                throw new Exception("El código de barras ya está asignado a otro jugador.");
+                throw new PDOException("El código de barras ya está asignado a otro jugador.");
             }
 
             // Validar posición (ENUM)
@@ -33,7 +33,7 @@ class Jugador {
                 'Delantero'
             ];
             if (!in_array($posicion, $posicionesValidas)) {
-                throw new Exception("Posición no válida");
+                throw new PDOException("Posición no válida");
             }
 
             // Insertar jugador
@@ -45,7 +45,7 @@ class Jugador {
             $stmt->execute([$nombre, $apellidos, $dorsal, $posicion, $barcode]);
 
             return "Jugador insertado correctamente.";
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             return "Error al insertar jugador: " . $e->getMessage();
         }
     }
@@ -56,7 +56,7 @@ class Jugador {
             $stmt = $conexion->prepare("SELECT * FROM jugadores WHERE barcode = ?");
             $stmt->execute([$barcode]);
             return $stmt->rowCount() > 0;
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             return false;
         }
     }
@@ -67,7 +67,7 @@ class Jugador {
             $stmt = $conexion->prepare("SELECT * FROM jugadores WHERE dorsal = ?");
             $stmt->execute([$dorsal]);
             return $stmt->rowCount() > 0;
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             return false;
         }
     }
@@ -77,7 +77,7 @@ class Jugador {
             $conexion = Conexion::getConexion();
             $stmt = $conexion->query("SELECT * FROM jugadores");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             return [];
         }
     }
