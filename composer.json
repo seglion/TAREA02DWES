@@ -3,5 +3,10 @@
         "fzaninotto/faker": "^1.9",
         "philo/laravel-blade": "3.*",
         "milon/barcode": "5.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
     }
 }

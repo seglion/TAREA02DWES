@@ -1,11 +1,11 @@
 <?php
 require '../vendor/autoload.php';
-require '../src/Jugador.php';
+use Src\Jugador;
 use Faker\Factory;
 
 $faker = Factory::create('es_ES');
 
-// Valores del ENUM de la base de datos
+
 $posiciones = [
     'Portero', 
     'Defensa', 

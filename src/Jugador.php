@@ -1,6 +1,11 @@
 <?php
 
-require_once 'Conexion.php';
+namespace src;
+
+
+use Src\Conexion;
+use PDO;
+use PDOException;
 
 class Jugador {
 

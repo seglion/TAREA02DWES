@@ -2,12 +2,25 @@
 
 @section('content')
 @php
+
+
 use Milon\Barcode\DNS1D;
 
 $d = new DNS1D();
 $d->setStorPath(__DIR__.'/cache/');
 
 @endphp
+
+
+@if (!empty($mensaje))
+    <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+        {{ $mensaje }}
+    </div>
+@endif
+
+<h1>Listado de Jugadores</h1>
+<button class="button-secondary" onclick="window.location.href='fcrear.php'">Crear Jugador Nuevo</button>
+
 <table border="1">
     <thead>
         <tr>
@@ -33,5 +46,5 @@ $d->setStorPath(__DIR__.'/cache/');
         @endforeach
     </tbody>
 </table>
-<a href="fcrear.php">Crear Nuevo Jugador</a>
+
 @endsection

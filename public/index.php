@@ -1,6 +1,6 @@
 <?php
 require '../vendor/autoload.php';
-require '../src/Jugador.php';
+use Src\Jugador;
 
 if (count(Jugador::obtenerJugadores()) == 0) {
     header("Location: instalacion.php");

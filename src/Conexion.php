@@ -1,5 +1,8 @@
 <?php
+namespace Src;
 
+use PDO;
+use PDOException;
 class Conexion {
     private static $conexion = null;
 

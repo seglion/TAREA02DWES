@@ -1,6 +1,6 @@
 <?php
 require '../vendor/autoload.php';
-require '../src/Jugador.php';
+use Src\Jugador;
 use Philo\Blade\Blade;
 
 $blade = new Blade('../views', '../cache');

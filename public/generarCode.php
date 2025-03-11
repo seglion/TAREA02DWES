@@ -1,7 +1,6 @@
 <?php
 require '../vendor/autoload.php';
-require '../src/Jugador.php';
-
+use Src\Jugador;
 function generarEAN13() {
     $codigo = '';
     while(strlen($codigo) < 12) {

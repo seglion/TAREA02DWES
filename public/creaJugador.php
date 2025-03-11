@@ -1,6 +1,10 @@
 <?php
 require '../vendor/autoload.php';
-require '../src/Jugador.php';
+use Src\Jugador;
+
+session_start();
+
+
 
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
@@ -24,6 +28,8 @@ if (Jugador::barcodeExiste($barcode)) {
 // Insertar jugador
 $resultado = Jugador::insertarJugador($nombre, $apellidos, $dorsal, $posicion, $barcode);
 if (strpos($resultado, 'correctamente') !== false) {
+    session_start();
+    $_SESSION['success_message'] = "Jugador creado correctamente.";
     header("Location: jugadores.php");
 } else {
     echo "Error: " . $resultado;

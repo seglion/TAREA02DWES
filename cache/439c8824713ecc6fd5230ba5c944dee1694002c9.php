@@ -1,11 +1,25 @@
 <?php $__env->startSection('content'); ?>
 <?php
+
+
 use Milon\Barcode\DNS1D;
 
 $d = new DNS1D();
 $d->setStorPath(__DIR__.'/cache/');
 
 ?>
+
+
+<?php if(!empty($mensaje)): ?>
+    <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+        <?php echo e($mensaje); ?>
+
+    </div>
+<?php endif; ?>
+
+<h1>Listado de Jugadores</h1>
+<button class="button-secondary" onclick="window.location.href='fcrear.php'">Crear Jugador Nuevo</button>
+
 <table border="1">
     <thead>
         <tr>
@@ -32,6 +46,6 @@ $d->setStorPath(__DIR__.'/cache/');
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </tbody>
 </table>
-<a href="fcrear.php">Crear Nuevo Jugador</a>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\TareaDECS2\views/vjugadores.blade.php ENDPATH**/ ?>

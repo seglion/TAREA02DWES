@@ -1,5 +1,180 @@
+/* Fondo general */
 body {
-    background-color: orange; /* Color naranja */
-    margin: 0; /* Elimina márgenes predeterminados */
-    font-family: Arial, sans-serif; /* Fuente opcional para mejorar la apariencia */
+    margin: 0;
+    padding: 0;
+    background-color: #ff8a65; /* Naranja pastel */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+
+
+}
+
+form {
+    width: 100%;
+    max-width: 900px;
+}
+
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+
+/* Mensaje de éxito */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+
+/* Tabla de jugadores */
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #343a40; /* Gris oscuro */
+    color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #495057;
+}
+
+th {
+    background-color: #212529;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #3e444a;
+}
+
+
+img {
+filter: invert();
+}
+
+
+
+.btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+.button-primary{
+    background-color: #007bff;;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover{
+    background-color: #0069d9;;
+}
+
+.button-secondary{
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.button-secondary:hover{
+    background-color: #218838;
+}
+
+
+
+.button-volver{
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.button-volver:hover{
+    background-color: #138496;
+}
+
+
+.button-limpiar{
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.button-limpiar:hover{
+    background-color: #5a6268;
 }
