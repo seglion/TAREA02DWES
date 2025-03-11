@@ -1,5 +1,11 @@
 <?php $__env->startSection('content'); ?>
-use \Milon\Barcode\DNS1D;
+<?php
+use Milon\Barcode\DNS1D;
+
+$d = new DNS1D();
+$d->setStorPath(__DIR__.'/cache/');
+
+?>
 <table border="1">
     <thead>
         <tr>
@@ -17,7 +23,7 @@ use \Milon\Barcode\DNS1D;
             <td><?php echo e($jugador['dorsal'] ?? 'Sin asignar'); ?></td>
             <td>
                 <!-- Carga el código de barras desde el script -->
-                <img src="data:image/png;base64,<?= base64_encode(file_get_contents('generarBarcode.php?code=' . $jugador['barcode'])) ?>">
+                <img src="data:image/png;base64,<?php echo e($d->getBarcodePNG($jugador['barcode'], 'EAN13')); ?>" />
                 <br>
                 <?php echo e($jugador['barcode']); ?>
 

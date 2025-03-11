@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-use \Milon\Barcode\DNS1D;
+@php
+use Milon\Barcode\DNS1D;
+
+$d = new DNS1D();
+$d->setStorPath(__DIR__.'/cache/');
+
+@endphp
 <table border="1">
     <thead>
         <tr>
@@ -19,7 +25,7 @@ use \Milon\Barcode\DNS1D;
             <td>{{ $jugador['dorsal'] ?? 'Sin asignar' }}</td>
             <td>
                 <!-- Carga el código de barras desde el script -->
-                <img src="data:image/png;base64,<?= base64_encode(file_get_contents('generarBarcode.php?code=' . $jugador['barcode'])) ?>">
+                <img src="data:image/png;base64,{{$d->getBarcodePNG($jugador['barcode'], 'EAN13') }}" />
                 <br>
                 {{ $jugador['barcode'] }}
             </td>

@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <form action="creaJugador.php" method="POST">
     <div>
         <label>Nombre:</label>
@@ -47,4 +45,5 @@ function generarCodigo() {
         });
 }
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\TareaDECS2\views/vcrear.blade.php ENDPATH**/ ?>
