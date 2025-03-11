@@ -1,0 +1,7 @@
+{
+    "require": {
+        "fzaninotto/faker": "^1.9",
+        "philo/laravel-blade": "3.*",
+        "milon/barcode": "5.1.*"
+    }
+}
